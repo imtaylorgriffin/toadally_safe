@@ -1,0 +1,102 @@
+html{
+    background-color: rgb(192, 159, 219);
+    font-family: 'VT323', monospace;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.heading{
+    color: #844DBB;
+    font-size: 5rem;
+    align-items: center;
+    text-align: center;
+
+}
+
+.frog{
+    max-width: 100px;
+    height: 100px;
+    position: inherit;
+    opacity: .8;
+    padding-left: .5%;
+    transition-duration: 0.4s;
+}
+.frog:hover{
+    max-width: 150px;
+    height: 150px;
+}
+
+.form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5%;
+    font-size: 2rem;
+}
+
+input{
+    height: 2rem;
+    margin-left: .3%;
+    font-family: 'VT323', monospace;
+    font-size: 2rem;
+}
+
+button {
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    transition-duration: 0.4s;
+    height: 2rem;
+    margin-left: .3%;
+}
+  
+button:hover {
+    background-color: #844DBB;
+    color: white;
+    border-radius: 15px;
+}
+
+
+
+.resultsArea{
+    background-color: white;
+}
+
+.crtLines{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../img/lines.jpg);
+    z-index: 10;
+    background-size: 7px auto;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    opacity: 0.1;
+    animation: moveDownAnimation 150s linear infinite;
+}
+@keyframes moveDownAnimation{
+    100% {
+        background-position-y: 100%;
+    }
+}
+
+.vignette{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../img/vignette.png);
+    z-index: 11;
+    background-size: 100% 100%;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    opacity: 1;
+}
