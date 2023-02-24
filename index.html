@@ -20,16 +20,20 @@
 
 
     <!-- zxcvbn input area vvvvv -->
-    <form class='form' method= 'POST' action="/password">
-        <label for="password">Enter Password:</label>
-        <input type="text" class="password" name = 'password'>
-        <button>Test Strength</button>
-    </form>
+    <!--<form class='form' onsubmit="return passwordCheck()">-->
+        <!--<form class='form' method= 'POST' action="/password"> -->
+    <div class="container">
+        <label for="password-text">Enter Password:</label>
+        <!--<input type="text" class="password" name = 'password'>-->
+        <input type="text" id="password-input">
+        <!-- <button onclick = "checkPassword()">Test Strength</button>-->
+    </div>
+    <!--</form>-->
     <!-- zxcvbn input area ^^^^^ -->
     
     
-    <div class="resultsArea">Results Area Work in Progress</div>
+    <div id="resultsArea">Results Area Work in Progress</div>
 
-    
+    <script src="js/app.js"></script>
 </body>
 </html>

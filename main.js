@@ -1,4 +1,4 @@
-//npm install -g nodemon  //provides automatic restarts so you don't have to restart manually
+//npm install -g nodemon  //provides automatic restarts after edits so you don't have to restart manually
 //npm install zxcvbn
 //npm install --save express
 //npm install body-parser
@@ -21,6 +21,8 @@ app.use(express.static(__dirname+'/public'));
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname+'/index.html'));
+
+    
 });
 
 app.post('/password', (req, res) => {
@@ -29,6 +31,13 @@ app.post('/password', (req, res) => {
     res.json(result);   //give result
 
 });
+
+
+
+
+// work in progress
+
+
 
 app.listen(3000);
 // http://localhost:3000
