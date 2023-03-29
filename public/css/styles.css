@@ -110,12 +110,86 @@ button:hover {
     justify-content: center;*/
     
 }
+.resultsAreaContainer div{
+    margin-left: 0.5%;
+}
 
 /*#stats{
     background-color: white;
     width: 30%;
     
 }*/
+
+#stats{
+    margin-left: 0%;
+
+}
+
+
+.stats-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 0.5%;
+  }
+  
+  .stats-table th,
+  .stats-table td {
+    border: 1px solid #844DBB;
+    padding: 8px;
+    text-align: center;
+    transition-duration: 0.4s;
+  }
+  
+  .stats-table th {
+    background-color: #c1bdb3;
+  }
+  
+  .stats-table tr:nth-child(even) {
+    background-color: #c1bdb3;
+  }
+  
+  .stats-table td:hover {
+    background-color: #c1bdb3;
+  }
+  
+  
+  
+  .batchAreaContainer{
+    color: #844DBB;
+    font-size: 1.5rem;
+  }
+
+  .batch-results-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 0.5%;
+  }
+  
+  .batch-results-table th, .batch-results-table td {
+    border: 1px solid #844DBB;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .batch-results-table th {
+    background-color: #c1bdb3;
+  }
+  
+  .batch-results-table tr:nth-child(even) {
+    background-color: #c1bdb3;
+  }
+  .batch-results-table tbody tr:nth-child(odd) {
+    background-color: #4a2b68;
+  }
+  
+  .batch-results-table td:hover {
+    background-color: #c1bdb3;
+  }
+  
+
+
+
+
 
 .crtLines{
     position: absolute;
@@ -137,18 +211,18 @@ button:hover {
     }
 }
 
-.vignette{
-    position: absolute;
+.vignette {
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background: url(../img/vignette.png);
     z-index: 11;
-    background-size: 100% 100%;
+    background-size: cover;
     mix-blend-mode: overlay;
     pointer-events: none;
     opacity: 1;
     width: 100%;
-    height: auto;
+    height: 100%;
 }
