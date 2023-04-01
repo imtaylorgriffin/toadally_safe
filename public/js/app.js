@@ -84,8 +84,26 @@ passwordInput.addEventListener('input', () => {
 
 
 
+// create a new button element
+const clearTableButton = document.createElement('button');
+clearTableButton.textContent = 'Clear Table';
+clearTableButton.style.display = 'none';
+clearTableButton.id="resetButton";
+
+// add the button to the DOM after the batchResultsArea element
+batchResultsArea.after(clearTableButton);
+
+// set an event listener on the button to hide the table and button when clicked
+clearTableButton.addEventListener('click', () => {
+  batchResultsArea.style.display = 'none';
+  clearTableButton.style.display = 'none';
+});
+
 
 batchInput.addEventListener('change', () => {
+  batchResultsArea.style.display = '';
+  clearTableButton.style.display = '';
+
   batchResultsArea.innerHTML = '';
   const file = batchInput.files[0]; //select file
   const reader = new FileReader();  // file reader
@@ -108,20 +126,23 @@ batchInput.addEventListener('change', () => {
             <td>${password}</td>
             <td>${data.score}</td>
             <td>${data.guesses}</td>
-            <td>${data.crack_times_display.online_no_throttling_10_per_second}</td>
-            <td>${data.crack_times_display.offline_slow_hashing_1e4_per_second}</td>
             <td>${data.crack_times_display.offline_fast_hashing_1e10_per_second}</td>
+            <td>${data.crack_times_display.offline_slow_hashing_1e4_per_second}</td>
+            <td>${data.crack_times_display.online_no_throttling_10_per_second}</td>
+            <td>${data.crack_times_display.online_throttling_100_per_hour}</td>
+
           </tr>`;
           batchResultsArea.innerHTML = 
           `<table class="batch-results-table">
             <thead>
               <tr>
                 <th>Password</th>
-                <th>Score</th>
-                <th>Guesses</th>
-                <th>Time to crack online (10/s)</th>
-                <th>Time to crack offline (10,000/s)</th>
-                <th>Time to crack offline (10,000,000,000/s)</th>
+                <th title="A score based on levels 1 - 4; too guessable, very guessable, somewhat guessable, safely unguessable, very unguessable">Score</th>
+                <th title="Estimated number of guesses to crack this password">Guesses</th>
+                <th title="Offline attack with user-unique salting but a fast hash function like SHA-1, SHA-256 or MD5. A wide range of reasonable numbers anywhere from one billion - one trillion guesses per second">Time to crack offline (10,000,000,000/s)</th>
+                <th title="Offline attack. assumes multiple attackers">Time to crack offline (10,000/s)</th>
+                <th title="Online attack on a service that doesn't ratelimit, or an attacker has outsmarted ratelimiting">Time to crack online (10/s)</th>
+                <th title="online attack on a service that ratelimits password auth attempts.">Time to crack online (100/hr)</th>
               </tr>
             </thead>
             <tbody>${output}</tbody>
@@ -141,3 +162,10 @@ batchInput.addEventListener('change', () => {
 
 });
 
+batchResultsArea.addEventListener('click', (event) => {
+  if (event.target.tagName === 'TD' && event.target.parentNode.tagName === 'TR') {
+    const password = event.target.parentNode.querySelector('td:first-child').textContent;
+    passwordInput.value = password;
+    passwordInput.dispatchEvent(new Event('input'));
+  }
+});
