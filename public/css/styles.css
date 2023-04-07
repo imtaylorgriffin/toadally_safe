@@ -107,6 +107,7 @@ button:hover {
   color: #844DBB;
   max-width: 100%;
   overflow-x: auto;
+
 }
 
 .resultsAreaContainer div{
@@ -159,6 +160,9 @@ button:hover {
   .batchAreaContainer{
     color: #844DBB;
     font-size: 1.5rem;
+    position: relative;
+    overflow: auto;
+
   }
 
   .batch-results-table {
@@ -216,7 +220,7 @@ button:hover {
 
 
 .crtLines{
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;

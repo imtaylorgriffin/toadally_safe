@@ -169,3 +169,5 @@ batchResultsArea.addEventListener('click', (event) => {
     passwordInput.dispatchEvent(new Event('input'));
   }
 });
+
+
