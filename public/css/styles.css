@@ -106,12 +106,12 @@ button:hover {
   font-size: 3rem;
   color: #844DBB;
   max-width: 100%;
-  overflow-x: auto;
 
 }
 
 .resultsAreaContainer div{
     margin-left: 0.5%;
+    overflow-x: auto;
 }
 
 /*#stats{
@@ -130,6 +130,8 @@ button:hover {
     border-collapse: collapse;
     width: 100%;
     margin-top: 0.5%;
+    
+
   }
   
   .stats-table th,
@@ -161,7 +163,11 @@ button:hover {
     color: #844DBB;
     font-size: 1.5rem;
     position: relative;
-    overflow: auto;
+
+
+  }
+  .batchAreaContainer div{
+    overflow-x: auto;
 
   }
 
@@ -169,6 +175,7 @@ button:hover {
     border-collapse: collapse;
     width: 100%;
     margin-top: 0.5%;
+
 
   }
   
